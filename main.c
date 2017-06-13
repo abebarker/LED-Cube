@@ -1,6 +1,28 @@
 #include "stm32f30x_conf.h"
 
+
+
 int main(void){
+	
+	Initialization();
+
+
+	while(1){
+
+
+	}
+
+}
+
+void TIM2_IRQHandler(void){
+}
+
+void USART2_IRQHandler(void){
+}
+
+void Initialization(void){
+
+
 	
 	GPIO_InitTypeDef GPIO_InitStructure;
 	USART_InitTypeDef USART_InitStructure;
@@ -121,23 +143,10 @@ int main(void){
 
 	SPI_Cmd(SPI1, ENABLE);
 
-
-
-
-	while(1){
-
-
-	}
+	
+	SysTick_Config(SystemCoreClock / 1000);		// Start up the system clock
 
 }
-
-void TIM2_IRQHandler(void){
-}
-
-void USART2_IRQHandler(void){
-}
-
-
 
 
 
