@@ -19,7 +19,7 @@ int main(void){
 
 	//TIM_TimeBase_InitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 	//TIM_TimeBase_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
-	TIM_TimeBase_InitStructure.TIM_Period = 40;						//Zählt bis zum angegebenen Wert
+	TIM_TimeBase_InitStructure.TIM_Period = 40;				//Counts to the specified value
 	TIM_TimeBase_InitStructure.TIM_Prescaler = 6399;
 	
 	TIM_TimeBaseInit(TIM2, &TIM_TimeBase_InitStructure);
@@ -33,7 +33,7 @@ int main(void){
 
 	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
 	
-	/**** UART2: kommunikation mit PC initialisieren ****/	
+	/**** UART2: communication with PC initialize ****/	
 
 	USART_InitStructure.USART_BaudRate = 19200; 
 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None; 
@@ -44,7 +44,7 @@ int main(void){
 	
 	USART_Init(USART2, &USART_InitStructure);
 	USART_Cmd(USART2, ENABLE);
-	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);		//Welches Flag löst denn Interrupt aus
+	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);		//Which flag triggers the interrupt
 	
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
@@ -75,7 +75,7 @@ int main(void){
 	GPIO_PinAFConfig(GPIOB, GPIO_PinSource4, GPIO_AF_5);
 	GPIO_PinAFConfig(GPIOB, GPIO_PinSource5, GPIO_AF_5);
 
-	//PA15 auf Strobe
+	//PA15 On Strobe
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_15;	
@@ -106,7 +106,7 @@ int main(void){
 	NVIC_Init(&NVIC_InitStructure);
 	
 	
-	//PC0 auf POTI
+	//PC0 on POTI
 	GPIO_Initstructure.GPIO_Mode = GPIO_Mode_AN;
 	GPIO_Initstructure.GPIO_OType = GPIO_OType_OD;
 	GPIO_Initstructure.GPIO_Pin = GPIO_Pin_0;
