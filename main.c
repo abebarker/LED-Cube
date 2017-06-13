@@ -19,7 +19,7 @@ int main(void){
 
 	//TIM_TimeBase_InitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 	//TIM_TimeBase_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
-	TIM_TimeBase_InitStructure.TIM_Period = 40;						//Zählt bis zum angegebenen Wert
+	TIM_TimeBase_InitStructure.TIM_Period = 40;						//ZÃ¤hlt bis zum angegebenen Wert
 	TIM_TimeBase_InitStructure.TIM_Prescaler = 6399;
 	
 	TIM_TimeBaseInit(TIM2, &TIM_TimeBase_InitStructure);
@@ -44,7 +44,7 @@ int main(void){
 	
 	USART_Init(USART2, &USART_InitStructure);
 	USART_Cmd(USART2, ENABLE);
-	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);		//Welches Flag löst denn Interrupt aus
+	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);		//Welches Flag lÃ¶st denn Interrupt aus
 	
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
