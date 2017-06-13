@@ -1,4 +1,4 @@
-# LED-Cube
+# main.c
 I need to program an asteroids game on 8x8x8 LED Cube with STM32 Micro-controller on Nucleo-64 board
 My task is: There is a crosshair on the lowest level of the cube, which can be moved by means of tactile inputs. 
 Blocks fall down and can be shot down.
