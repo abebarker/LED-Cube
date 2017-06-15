@@ -1,0 +1,23 @@
+
+Possible game loop
+
+1) get time
+2) if time to run though game loop
+	A) update positions
+		a) get input, modify user position
+			i) if shoot, create bullet object 
+		b) loop though list of objects, update position.
+
+	B) check for collisions
+		a) if collision bullet
+			i) remove enemy object
+			ii) add explosion object
+			iii) modify score* (if needed)
+		b) if collision player
+			i)  reduce number of lives
+			ii) do a pause or flash warning
+				1) if no more lives, exit game loop
+				
+	C) draw game objects to display buffer
+		a) set buffer as ready
+
